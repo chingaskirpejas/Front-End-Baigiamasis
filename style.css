@@ -24,7 +24,6 @@ body, #slider, .wrap, .slide-content{
   background-size: cover;
   background-repeat: no-repeat;
 }
-
 .slide1{background-image: url(images/image1.png);}
 .slide2{background-image: url(images/image2.png);}
 .slide3{background-image: url(images/image3.png);}
@@ -56,11 +55,15 @@ body, #slider, .wrap, .slide-content{
   align-items: center;
 }
 .popup .virsus i{
+  z-index: 7777;
   position: absolute;
   left: 3%;
   display: flex;
   color: #ffffff;
   font-size: 300%;
+}
+.popup .virsus i:hover{
+  cursor: pointer;
 }
 .popup .virsus p{ 
   font-weight: 50;
@@ -113,23 +116,44 @@ body, #slider, .wrap, .slide-content{
 }
 .slide-content .to-shop{
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   position: relative;
-  bottom: 0;
   height: 20%;
   width: 100%;
 }
 .slide-content .box-to-shop{
+  background-image: linear-gradient(
+      to right,
+      silver 50%,
+      transparent 50%
+  );
+  background-size: 4px 1.5px;
+  background-repeat: repeat-x;
+  background-position: 0% bottom;
   position: relative;
-  margin: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 0;
   width: 20%;
   height: 8vh;
-  border:  1px dashed white;
+}
+.slide-content .box-to-shop:hover{
+  animation-name: border-dance;
+  animation-duration: 24s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+  @keyframes border-dance {
+    from {
+      background-position: 0% bottom;
+    }
+    to {
+      background-position: 100% bottom;
+    }
+  }
+.slide-content .box-to-shop:hover{
+  background-position: 212px 0px, 0px 116px, 0px 0px, 216px 116px;
 }
 .box-to-shop a{
   text-decoration: none;
