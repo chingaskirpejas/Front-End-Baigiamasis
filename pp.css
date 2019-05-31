@@ -5,21 +5,15 @@
 .nav-tgl {
   display: inline-block;
   cursor: pointer;
-  position: fixed;
-  z-index: 1;
-  right: 30px;
-  top: 30px;
-  width: 70px;
-  height: 70px;
+  position: relative;
+  height: 7vh;
   border: none;
-  border-radius: 50%;
-  padding: 0;
   background: #fff;
-  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.24);
   line-height: 0.6;
   text-align: center;
 }
 .nav-tgl > span {
+  z-index: 1;
   display: inline-block;
   position: relative;
   height: 2px;
@@ -29,6 +23,7 @@
   vertical-align: middle;
 }
 .nav-tgl > span:before, .nav-tgl > span:after {
+  z-index: 1;
   display: inline-block;
   position: absolute;
   content: "";
@@ -87,4 +82,16 @@
 }
 .menu.active .nav-tgl > span:before {
   transform: rotate(45deg);
+}
+.list-box{
+  background-color: #ffffff;
+  display: none;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+.list-box .list{
+  display: none;
+  color: #ffffff;
+  position: absolute;
 }

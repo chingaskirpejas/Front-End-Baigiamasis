@@ -1,3 +1,8 @@
+<?php
+  $productsFromJson = file_get_contents('ddd.json');
+  $productsArray = json_decode($productsFromJson, true);
+  $productsArray = $productsArray['products'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,42 +19,61 @@
 		<a href="index.html" class="arrow-left"><i class="fas fa-angle-left"></i></a>
 		<h1>Sneakers</h1>
 		<div class="social-container colwhi">
-	        <a target="_blank" href="https://www.facebook.com/eyoooooooooooo"><i class="soc-icon fab fa-facebook-f"></i></a>
-	        <a target="_blank" href="https://www.instagram.com/kirvoksas/"><i class="soc-icon fab fa-instagram"></i></a>
-	        <a target="_blank" href="https://twitter.com/Daniilas_I"><i class="soc-icon fab fa-twitter"></i></a>
-	        <a target="_blank" href="https://www.google.com/"><i class="soc-icon fab fa-google"></i></a>
-          <div class="menu">
-            <button class="nav-tgl" type="button" aria-label="toggle menu">
-              <!-- this span just for the three dividers in the hamburger button--><span aria-hidden="true"></span>
-            </button>
-            <nav class="nav">
-              <ul class="list">
-                <li>Sandals</li>
-                <li>Skateboarding</li>
-                <li>Classic</li>
-              </ul>
-            </nav>
-          </div>
+	       <a target="_blank" href="https://www.facebook.com/eyoooooooooooo"><i class="soc-icon fab fa-facebook-f"></i></a>
+	       <a target="_blank" href="https://www.instagram.com/kirvoksas/"><i class="soc-icon fab fa-instagram"></i></a>
+	       <a target="_blank" href="https://twitter.com/Daniilas_I"><i class="soc-icon fab fa-twitter"></i></a>
+	       <a target="_blank" href="https://www.google.com/"><i class="soc-icon fab fa-google"></i></a>
+        <div class="menu">
+          <button class="nav-tgl" type="button" aria-label="toggle menu">
+            <span aria-hidden="true"></span>
+          </button>
+          <nav class="nav">
+          </nav>
         </div>
     </div>
-   	<main>
-   		<div class="main-text">
-   			<h2>Choose yours</h2>
-   			<p>
-   				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh purus, fringilla a feugiat eu, commodo nec tortor. Duis mi nunc, pharetra sed dignissim nec, tempor at enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis nulla cursus, placerat ipsum ac, interdum metus. Suspendisse potenti. Aenean tempus efficitur posuere. Proin dignissim, eros nec aliquet dictum, eros turpis pulvinar neque, vel posuere turpis nunc placerat velit. Curabitur tempor velit augue. Fusce eget nisi ut sem varius tincidunt eget eget ligula. Cras eget blandit ex. In eleifend porta orci, sit amet rutrum odio iaculis ac. Proin posuere odio non nisi euismod, eu mattis mauris auctor. In quis pulvinar eros.
-   			</p>
-   		</div>
-   		<div class="shop-main">
-        <div class="shop-topbar">
-          <div>
+  </div>
+
+  <!-- HIDDEN -->
+
+  <div class="list-box">
+    <ul class="list">
+      <li>Sandals</li>         
+      <li>Skateboarding</li>
+      <li>Classic</li>
+    </ul>
+  </div>
+
+  <main>
+   	<div class="shop-main">
+      <div class="shop-topbar">
+        <div>
             
-          </div>
-        </div>
-        <div class="shop-sidebar">
-          
         </div>
       </div>
-   	</main>
-    <script type="text/javascript" src="menu-popup.js"></script>
+      <div class="shop-sidebar">
+          <ul class="sidebar-list">
+            <li class="sidebar-list-header">Brands</li>
+              <ul class="sidebar-list-items">
+                <li>Adidas</li>
+                <li>Nike</li>
+                <li>Balenciaga</li>
+                <li>Off White </li>
+              </ul>
+          </ul>
+     </div>
+     <div class="shop-main-items">
+       <?php foreach ($productsArray as $product): ?>
+         <div class="item">
+            <div class="item-image" style="background-image: url(<?= $product['image'];?>)">
+      
+            </div>
+            <p class="item-name"><?= $product['name'];?></p>
+            <p class="item-descripion"><?= $product['description']; ?></p>
+          </div>
+        <?php endforeach; ?>
+     </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="menu-popup.js"></script>
 </body>
 </html>
