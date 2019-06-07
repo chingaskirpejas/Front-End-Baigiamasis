@@ -1,8 +1,8 @@
 .nav ul {
   display: none;
 }
-
 .nav-tgl {
+  margin: 0 20px;
   display: inline-block;
   cursor: pointer;
   position: relative;
@@ -71,8 +71,6 @@
   clip-path: circle(100%);
 }
 .menu.active .nav-tgl > span {
-  position: absolute;
-  height: 34px;
   background: transparent; 
 }
 .menu.active .nav-tgl > span:after, .menu.active .nav-tgl > span:before {
@@ -88,14 +86,38 @@
   transform: rotate(45deg);
 }
 .list-box{
-  background-color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Muli', sans-serif;
+  z-index: 2000;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
   display: none;
   margin: 0 auto;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 .list-box .list{
+  top: 5vh;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
   display: none;
   color: #ffffff;
   position: absolute;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.list-box .list li{
+  position: relative;
+  padding: 2vh 0;
+}
+.list-box .list li:hover{
+  top: -1vh;
+}
+.list-box .list a{
+  font-size: 200%;
+  color: #fff;
+  text-decoration: none;
 }
