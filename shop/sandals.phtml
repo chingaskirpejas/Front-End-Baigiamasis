@@ -1,32 +1,104 @@
+<?php
+  $productsFromJson = file_get_contents('addItem/sandals.json');
+  $productsArray = json_decode($productsFromJson, true);
+  $productsArray = $productsArray['sandals'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
- 	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
- 	<link rel="stylesheet" type="text/css" href="second-style.css">
-	<title>Shop - Sandals</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="second-style.css">
+  <link rel="stylesheet" type="text/css" href="pp.css">
+  <title>Shop - Sandals</title>
 </head>
-<body id="Sandals-body">
-	<div class="Title">
-		<a href="index.html" class="arrow-left"><i class="fas fa-angle-left"></i></a>
-		<h1>Sandals</h1>
-		<div class="social-container colwhi">
-	        <a target="_blank" href="https://www.facebook.com/eyoooooooooooo"><i class="soc-icon fab fa-facebook-f"></i></a>
-	        <a target="_blank" href="https://www.instagram.com/kirvoksas/"><i class="soc-icon fab fa-instagram"></i></a>
-	        <a target="_blank" href="https://twitter.com/Daniilas_I"><i class="soc-icon fab fa-twitter"></i></a>
-	        <a target="_blank" href="https://www.google.com/"><i class="soc-icon fab fa-google"></i></a>
-        </div>
+<body id="sandals-body">
+  <div id='sandals-banner' class="Title">
+    <div class="title-side">
+      <a href="javascript:history.go(-1)" class="arrow-left"><i class="fas fa-angle-left"></i></a>
     </div>
-   	<main>
-   		<div class="main-text">
-   			<h2>Choose yours</h2>
-   			<p>
-   				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh purus, fringilla a feugiat eu, commodo nec tortor. Duis mi nunc, pharetra sed dignissim nec, tempor at enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis nulla cursus, placerat ipsum ac, interdum metus. Suspendisse potenti. Aenean tempus efficitur posuere. Proin dignissim, eros nec aliquet dictum, eros turpis pulvinar neque, vel posuere turpis nunc placerat velit. Curabitur tempor velit augue. Fusce eget nisi ut sem varius tincidunt eget eget ligula. Cras eget blandit ex. In eleifend porta orci, sit amet rutrum odio iaculis ac. Proin posuere odio non nisi euismod, eu mattis mauris auctor. In quis pulvinar eros.
-   			</p>
-   		</div>
-   		<div>
-   	</main>
+    <div class="title-center">
+      <h1 id="sandals-title">Sandals</h1>
+    </div>
+    <div class="menu title-side">
+          <button class="nav-tgl" type="button" aria-label="toggle menu">
+            <span aria-hidden="true"></span>
+          </button>
+          <nav class="nav">
+          </nav>
+        </div>
+  </div>
+
+  <!-- HIDDEN -->
+
+<div class="list-box">
+    <ul class="list">
+      <a href="sneakers.phtml"><li>sneakers</li></a>        
+      <a href="skateboarding.phtml"><li>Skateboarding</li></a>
+      <a href="classic.phtml"><li>CLASSIC</li></a>
+      <a href="/Baigiamasis/login/login.html"><li>LOGIN</li></a>
+      <a href="/Baigiamasis/login/register.html"><li>REGISTER</li></a>
+      <a href="../contacts.html"><li>CONTACTS</li></a>
+    </ul>
+  </div>
+
+  <main>
+    <div class="shop-main">
+      <div class="shop-topbar">
+        <div class="custom-select">
+            <select>
+              <option value="0">Sort:</option>
+              <option value="1">From A-Z</option>
+              <option value="2">From Z-A</option>
+              <option value="3">Highest price</option>
+              <option value="4">Lowest price</option>
+              <option value="5">Most popular</option>
+            </select>
+        </div>
+     </div>
+     <div class="main-center">
+      <div class="shop-sidebar">
+          <ul class="sidebar-list">
+            <li class="sidebar-list-header">Brands</li>
+            <ul class="sidebar-list-items">
+              <li>Sandal 1</li>
+              <li>Sandal 2</li>
+              <li>Sandal 3</li>
+              <li>Sandal 4</li>
+            </ul>
+          </ul>
+     </div>
+     <div class="shop-main-items">
+      <?php foreach ($productsArray as $product): ?>
+        <div class="cont">
+          <div class="image-div" style="background-image: url(<?= $product['image'];?>)"></div>
+          <p class="name" ><?= $product['name'];?></p>
+          <p class="descript" ><?= $product['description']; ?></p>
+        </div>
+      <?php endforeach; ?>
+      <div class="add-item">
+        <div class="add-circle"><i class="fas fa-plus"></i></div>
+      </div>
+     </div>
+    </div>
+  </div>
+  <div>
+    <div class="social-container colwhi">
+           <a target="_blank" href="https://www.facebook.com/eyoooooooooooo"><i class="soc-icon fab fa-facebook-f"></i></a>
+           <a target="_blank" href="https://www.instagram.com/kirvoksas/"><i class="soc-icon fab fa-instagram"></i></a>
+           <a target="_blank" href="https://twitter.com/Daniilas_I"><i class="soc-icon fab fa-twitter"></i></a>
+           <a target="_blank" href="https://www.google.com/"><i class="soc-icon fab fa-google"></i></a>
+      </div>
+  </div>
+  </main>
+  <footer>
+    <span> &#9400; 2019 Daniilas Ivanovas</span>
+  </footer>
+  <script type="text/javascript" src="dropdown_slector.js"></script>
+  <script type="text/javascript" src="shop-script.js"></script>
 </body>
 </html>

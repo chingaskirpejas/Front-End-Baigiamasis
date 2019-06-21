@@ -4,41 +4,56 @@ body{
 	width: 100%;
 	height: 100vh;
 }
-#sneakers-body{
-	background-color: #333E45;
+#sneakers-banner{
+	background: #af2456;
 }
-#skateboarding-body{
-	background-color: #675236;
+#sandals-banner{
+	background: rgb(23, 136, 118);
 }
-#sandals-body{
-	background-color: #8B8B8B;
+#skateboarding-banner{
+	background: rgb(248, 197, 55);
 }
-#classic-body{
-	background-color: #432C34;
+#classic-banner{
+	background: rgb(136,136,136);
+}
+#contacts-banner{
+	background: #006E90;
 }
 .Title{
-	background-color: white;
-	height: 9vh;
+	box-shadow: 0px 1vh 2vh -2vh #111; 
+	height: 10vh;
+	color: white;
 	position: relative;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	width: 100%;
 }
 .Title .arrow-left{
-	position: absolute;
+	position: relative;
 	left: 50px;
-	color: black;
+	color: white;
 	font-size: 30px;
 }
+.Title .title-side{
+	width: 15%;
+}
+.Title .title-center{
+	display: flex;
+	justify-content: center;
+	width: 70%;
+}
 .Title h1{
-	margin: 0; 
+	z-index: 99999;
 	padding: 0;
+	margin: 0 auto; 
 	font-family: 'Roboto', sans-serif;
-	font-size: 50px;
+	font-size: 350%;
 	font-weight: 100;
 }
 .social-container{
+  display: flex;
+  align-items: center;
   position: absolute;
   right: 50px;
   margin: 0;
@@ -57,19 +72,195 @@ body{
     color: #000000;
     font-size: 25px;
   }
+
+  /*MAIN SECTION*/
+
 main{
-	color: white;
-	width: 90%;
+	margin: 0 auto;
+	color: black;
+	width: 100%;
 }
-main .shop-topbar{
-	
+main .shop-main{
+	width: 100%;
+}
+main .shop-topbar{ 
+	font-family: 'Noto Sans', sans-serif;
+	color: black;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	position: relative;
+	width: 100%;
+	height: 12vh;
+}
+
+/*DROP DOWN SELECTOR*/
+
+/* The container must be positioned relative: */
+.custom-select {
+	margin: 0 3%;
+	width: 12%;
+	position: relative;
+	color: black;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+	z-index: 0;
+  	background-color: white;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: black transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent black transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+/*-webkit-box-shadow: 0px 0px 45px -10px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 45px -10px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 45px -10px rgba(0,0,0,0.75);*/
+  padding: 8px 16px;
+  border: 1px solid black;
+  border-color: transparent rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+main .main-center{
+	display: inline-flex;
+	margin-top: 4vh;
+	width: 100%;
 }
 main .shop-sidebar{
-	margin: 5vh 5%;
-	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
 	height: 80vh;
-	width: 10%;
+	width: 20%;
 }
-main .shop-sidebar ul{
+main ul{
+	font-family: 'Noto Sans', sans-serif;
 	list-style-type: none;
+}
+main .shop-sidebar .sidebar-list{
+	margin-top: 10vh;
+	padding: 0;
+	list-style-type: none;
+}
+.sidebar-list .sidebar-list-header{
+	font-size: 150%;
+	padding: 2vh 0; 
+}
+.sidebar-list .sidebar-list-items li{
+	font-size: 115%;
+	padding: 1vh 0;
+}
+main .shop-main-items{
+	flex-wrap: wrap;
+	width: 80%;
+	height: 80vh;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: row;
+}
+.shop-main-items .cont, .shop-main-items .add-item{
+	margin: 2vh 2%;
+	border-radius: 3%;
+	height:35vh;
+	width: 25%;
+	background-color: #f9f9f9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 1s;
+}
+.shop-main-items .cont{
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: column;
+	font-family: 'Noto Sans', sans-serif;
+}
+.cont .image-div{
+	margin: 1vh auto;
+	width: 70%;
+	height: 20vh;
+	border:  1px red solid;
+}
+.cont .name, .descript{
+	margin: 1%;
+}
+.cont .name{
+	font-size: 150%;
+}
+.cont .decript{
+
+}
+.shop-main-items .add-item:hover, .shop-main-items .cont:hover{
+	-webkit-box-shadow: 0px 0px 33px -8px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 33px -8px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 33px -8px rgba(0,0,0,0.75);
+}
+.add-item .add-circle{
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	height: 20vh;
+	width: 60%;
+	background-color: #E3E3E3;
+	transition: all 1s;
+}
+.add-circle:hover{
+	-webkit-box-shadow: 0px 0px 33px -8px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 33px -8px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 33px -8px rgba(0,0,0,0.75);
+}
+.add-circle i{
+	font-size: 500%;
+	color: #727272;
+}
+footer{
+	display: flex;
+	align-items: baseline;
+	justify-content: space-around;
+	font-family: 'Noto Sans', sans-serif;
+	bottom: 0;
 }
