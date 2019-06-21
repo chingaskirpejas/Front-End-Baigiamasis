@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/Baigiamasis/shop/second-style.css">
+  <link rel="stylesheet" type="text/css" href="register.css">
+  <title>Shop - Login</title>
+</head>
+<body>
+  <div class="Title">
+    <a href="javascript:history.go(-1)" class="arrow-left"><i class="fas fa-angle-left"></i></a>
+    <h1>Login</h1>
+    <div class="menu">
+          <button class="nav-tgl" type="button" aria-label="toggle menu">
+            <span aria-hidden="true"></span>
+          </button>
+          <nav class="nav">
+          </nav>
+        </div>
+  </div>
+
+  <!-- HIDDEN -->
+
+  <div class="list-box">
+    <ul class="list" id="login-list">
+      <a href="/Baigiamasis/shop/sneakers.phtml"><li>sneakers</li></a>
+      <a href="/Baigiamasis/shop/sandals.phtml"><li>Sandals</li></a>         
+      <a href="/Baigiamasis/shop/skateboarding.phtml"><li>Skateboarding</li></a>
+      <a href="/Baigiamasis/shop/classic.phtml"><li>CLASSIC</li></a>
+      <a href="/Baigiamasis/login/register.html"><li>register</li></a>
+      <a href="/Baigiamasis/contacts.html"><li>CONTACTS</li></a>
+    </ul>
+  </div>
+
+<main>
+  <form method="POST" action="login.php">
+    <div id="login-uName">
+  		<span>USERNAME/EMAIL</span>
+  		<input type="text" name="userName" required>
+    </div>
+    <div id='login-password'>
+  		<span>PASSWORD</span>
+  		<input type="password" name="password" required>
+    </div>
+    <div id="login-submit">
+      <button id="submit-button" type="submit" name="Register"><span>LOGIN</span></button>
+    </div>
+	</form>
+  <div>
+    <div class="social-container colwhi">
+           <a target="_blank" href="https://www.facebook.com/eyoooooooooooo"><i class="soc-icon fab fa-facebook-f fb"></i></a>
+           <a target="_blank" href="https://www.instagram.com/kirvoksas/"><i class="soc-icon fab fa-instagram insta"></i></a>
+           <a target="_blank" href="https://twitter.com/Daniilas_I"><i class="soc-icon fab fa-twitter tweet"></i></a>
+           <a target="_blank" href="https://www.google.com/"><i class="soc-icon fab fa-google google"></i></a>
+      </div>
+  </div>
+  </main>
+  <script type="text/javascript" src="/Baigiamasis/shop/shop-script.js"></script>
+</body>
+</html>
