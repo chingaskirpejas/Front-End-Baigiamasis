@@ -1,0 +1,182 @@
+.window-topbar .top-main{
+	width: 100%;
+	margin: 0 auto;
+}
+.Title, .Title i{
+	color: black;
+}
+.nav-tgl span, .nav-tgl span:before, .nav-tgl span:after{
+	background-color: black;
+}
+main .select-type{
+	height: 80vh;
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+main .select-type div{
+	margin: 2vh 1%;
+	height: 30vh;
+	width: 25%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.5s;
+	-webkit-box-shadow: 0px 0px 19px -8px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 19px -8px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 19px -8px rgba(0,0,0,0.75);
+}
+main .select-type div:hover{
+	-webkit-box-shadow: 0px 0px 19px -3px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 19px -3px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 19px -3px rgba(0,0,0,0.75);
+}
+.select-type span{
+	font-family: 'Roboto', sans-serif;
+	font-size: 250%;
+}
+#select-sneakers{
+	background: #f91866;
+}
+#select-sandals{
+	background: rgba(23, 136, 118);
+}
+#select-sb{
+	background: rgba(248, 197, 55); 
+}
+#select-classic{
+	background: rgba(255, 255, 255);
+}
+
+.select-type .select:before {
+  z-index: 100;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 500ms ease-in-out;
+  clip-path: circle(30px at calc(100% - 65px) 65px);
+  visibility: hidden;
+}
+.select-type.active .select:before {
+  visibility: visible;
+  clip-path: circle(100%);
+}
+/*ADD ITEM MENU WHEN SELECTED TYPE*/
+.window-cont{
+	display: none;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	height: 100vh;
+	width: 100%;
+	position: absolute;
+}
+.window-cont *{
+	z-index: 110;  
+}
+.add-window{
+	top: 7vh;
+	height: 70vh;
+	width: 60%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: flex-start;
+	position: absolute;
+}
+.add-window .window-topbar{
+	font-family: 'Roboto', sans-serif;
+	color: whitesmoke;
+	height: 15vh;
+	width: 100%;
+	display: flex;
+}
+.window-topbar .top-type{
+	padding: 0 2%;
+	font-size: 240%;
+	height: 100%;
+	width: 85%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: row;
+}
+.window-topbar .top-close{
+	font-size: 200%;
+	height: 100%;
+	width: 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+	flex-direction: row;
+}
+.uzdarymas{
+	cursor: pointer;
+}
+.add-window .window-center{
+	height: 85vh;
+	width: 100%;
+}
+.window-center form{
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding: 0 2%;
+	width: 90%;
+}
+form span{
+	font-size: 200%;
+	font-family: 'Roboto', sans-serif;
+}
+form input{
+	font-family: 'Roboto', sans-serif;
+}
+#pName, #pDescription, #pImg{
+	margin: 2vh 0;
+	width: 80%;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+#butt-div{
+	margin: 2vh 0;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+#pName input[type=text]{
+	color: white;
+	border: 2px solid white;
+	background: rgba(0, 0, 0, 0.2);
+	width: 70%;
+	height: 3vh;
+	font-size: 150%;
+}
+#pDescription textarea{
+	color: white;
+	border: 2px solid white;
+	background: rgba(0, 0, 0, 0.2);
+	width: 100%;
+	height: 10vh;
+	font-size: 100%;
+	max-width: 100%;
+	max-height: 20vh;
+}
+form #butt-div #submit-butt{
+	font-size: 100%;
+	height: 6vh;
+	width: 20%;
+	color: white;
+	text-transform: uppercase;
+	background-color: rgba(0,0,0, 0.8); 
+}
