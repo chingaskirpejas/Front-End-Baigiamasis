@@ -1,0 +1,37 @@
+#contact-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	width: 80%;
+	height: 80vh;
+}
+#contact{
+	width: 50%;
+}
+#photo-div{
+	display: flex;
+	justify-content: center;
+	height: 40vh;
+	width: 100%;
+}
+#contact-desc{
+	font-family: 'Press Start 2P', cursive;
+	font-size: 120%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 10vh;
+}
+#photo-div img{
+	margin: 0 auto;
+	height: 35vh;
+	width: 79%;
+	border-radius: 50%;
+
+}
+#social{
+	display: flex;
+	justify-content: space-around;
+	align-items: baseline;
+}

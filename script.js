@@ -4,11 +4,10 @@ arrowLeft = document.querySelector('#arrow-left');
 slide1 = document.querySelector('.slide1');
 slide2 = document.querySelector('.slide2');
 slide3 = document.querySelector('.slide3'); 
-
 current = 0;
 //BANNER ROTATION
 bannerTimer  = 400
-
+// PARALLAX
 // clear all images
 function reset(){
 	for (let i = 0; i < slideImages.length; i++) {
